@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="성과기여도 평가">
+    <meta name="theme-color" content="#B50000">
+    <meta name="msapplication-TileColor" content="#B50000">
+    <meta name="format-detection" content="telephone=no">
+    <title>성과기여도 평가 학습 시스템 - 한국보건복지인재원(KOHI)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="roi-styles.css">
+    <link rel="stylesheet" href="compact-styles.css">
+    <link rel="stylesheet" href="smart-fix.css">
+    <link rel="stylesheet" href="mobile-optimization.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">한국보건복지인재원(KOHI)</h1>
+            <p class="header-subtitle">성과기여도 평가 학습 시스템</p>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="theory">이론</button>
+                <button class="nav-tab" data-tab="practice">실습</button>
+                <button class="nav-tab" data-tab="management">성과 관리 도구</button>
+            </div>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="container">
+            <section id="theory" class="tab-content active">
+                <header class="page-header">
+                    <h1>성과기여도 평가 이론 학습</h1>
+                    <p>한국보건복지인재원(KOHI) 교육과정의 성과기여도를 체계적으로 평가하는 방법을 학습합니다.</p>
+                </header>
+
+                <!-- 학습 네비게이션 -->
+                <div class="learning-nav">
+                    <button class="learning-nav-btn active" data-section="overview">개요</button>
+                    <button class="learning-nav-btn" data-section="kirkpatrick">성과기여도의 이해</button>
+                    <button class="learning-nav-btn" data-section="kpi-tool">KPI 설정 도구</button>
+                    <button class="learning-nav-btn" data-section="course-examples">과정별 예시</button>
+                    <button class="learning-nav-btn" data-section="roi-calculator">ROI 계산기</button>
+                    <button class="learning-nav-btn" data-section="quiz">학습 퀴즈</button>
+                </div>
+
+                <!-- 학습 개요 섹션 -->
+                <div id="overview" class="learning-section active">
+                    <div class="concept-overview">
+                        <div class="card card--emphasis">
+                            <div class="card__body">
+                                <h3>성과기여도 평가란?</h3>
+                                <p>교육과정이 조직의 목표 달성과 성과 향상에 얼마나 기여하는지를 측정하고 평가하는 체계적인 과정입니다.</p>
+                                <ul>
+                                    <li><strong class="list-title">목적</strong><span>교육의 효과성과 효율성 확인</span></li>
+                                    <li><strong class="list-title">범위</strong><span>반응, 학습, 행동, 결과 4단계 평가</span></li>
+                                    <li><strong class="list-title">방법</strong><span>정량적·정성적 지표를 통한 종합 평가</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="courses-section">
+                        <h2>평가 대상 교육과정 (8개)</h2>
+                        <div class="courses-grid grid grid--3" id="theory-courses-grid">
+                            <!-- 과정 카드들이 동적으로 생성됩니다 -->
+                        </div>
+                    </div>
+
+                    <div class="evaluation-overview">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>커크패트릭 4단계 모델</h3>
+                                <div class="model-preview">
+                                    <div class="model-levels">
+                                        <div class="model-level level-4">
+                                            <span>4단계: 결과평가</span>
+                                        </div>
+                                        <div class="model-level level-3">
+                                            <span>3단계: 행동평가</span>
+                                        </div>
+                                        <div class="model-level level-2">
+                                            <span>2단계: 학습평가</span>
+                                        </div>
+                                        <div class="model-level level-1">
+                                            <span>1단계: 반응평가</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>교육평가의 표준 모델로, 반응평가부터 결과평가까지 단계적으로 교육의 효과를 측정합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 커크패트릭 모델 섹션 -->
+                <div id="kirkpatrick" class="learning-section">
+                    <div class="kirkpatrick-model">
+                        <h3>커크패트릭 4단계 모형</h3>
+                        <div class="model-diagram">
+                            <div class="level-card" data-level="1">
+                                <div class="level-number">1</div>
+                                <h4>반응평가</h4>
+                                <p>교육 참가자들의 만족도, 흥미도 측정</p>
+                                <div class="level-details">
+                                    <strong>측정 방법:</strong>
+                                    <ul>
+                                        <li>설문조사</li>
+                                        <li>인터뷰</li>
+                                        <li>즉석 피드백</li>
+                                    </ul>
+                                    <strong class="question-title">핵심 질문:</strong>
+                                    <ul>
+                                        <li>교육이 유익했는가?</li>
+                                        <li>내용이 적절했는가?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="level-card" data-level="2">
+                                <div class="level-number">2</div>
+                                <h4>학습평가</h4>
+                                <p>지식, 기술, 태도의 실제 향상도 측정</p>
+                                <div class="level-details">
+                                    <strong>측정 방법:</strong>
+                                    <ul>
+                                        <li>사전/사후 테스트</li>
+                                        <li>실기 평가</li>
+                                        <li>포트폴리오 평가</li>
+                                    </ul>
+                                    <strong class="question-title">핵심 질문:</strong>
+                                    <ul>
+                                        <li>무엇을 학습했는가?</li>
+                                        <li>역량이 향상되었는가?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="level-card" data-level="3">
+                                <div class="level-number">3</div>
+                                <h4>행동평가</h4>
+                                <p>학습 내용의 직무 현장 적용도 측정</p>
+                                <div class="level-details">
+                                    <strong>측정 방법:</strong>
+                                    <ul>
+                                        <li>현업 관찰</li>
+                                        <li>360도 피드백</li>
+                                        <li>업무 개선 사례 수집</li>
+                                    </ul>
+                                    <strong class="question-title">핵심 질문:</strong>
+                                    <ul>
+                                        <li>학습한 내용을 적용하고 있는가?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="level-card" data-level="4">
+                                <div class="level-number">4</div>
+                                <h4>결과평가</h4>
+                                <p>조직의 최종 성과에 미친 영향 측정</p>
+                                <div class="level-details">
+                                    <strong>측정 방법:</strong>
+                                    <ul>
+                                        <li>성과지표 분석</li>
+                                        <li>비용편익 분석</li>
+                                        <li>ROI 계산</li>
+                                    </ul>
+                                    <strong class="question-title">핵심 질문:</strong>
+                                    <ul>
+                                        <li>조직 성과에 기여했는가?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phillips-roi">
+                        <h3>필립스 ROI 모델 (5단계)</h3>
+                        <div class="card">
+                            <div class="card__body">
+                                <h4>5단계: ROI (Return on Investment)</h4>
+                                <p>교육 투자대비 수익률을 계산하여 교육의 경제적 가치를 측정합니다.</p>
+                                <div class="roi-formula">
+                                    <strong>ROI 계산 공식:</strong>
+                                    <div class="formula-box">
+                                        ROI = (순이익 ÷ 교육비용) × 100
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KPI 설정 도구 섹션 -->
+                <div id="kpi-tool" class="learning-section">
+                    <div class="smart-principles">
+                        <h2>SMART 원칙</h2>
+                        <div class="smart-grid">
+                            <div class="smart-item smart-item--s">
+                                <h3>S - Specific</h3>
+                                <p>구체적</p>
+                                <span>명확하고 구체적인 목표</span>
+                            </div>
+                            <div class="smart-item smart-item--m">
+                                <h3>M - Measurable</h3>
+                                <p>측정가능</p>
+                                <span>수치로 측정 가능</span>
+                            </div>
+                            <div class="smart-item smart-item--a">
+                                <h3>A - Achievable</h3>
+                                <p>달성가능</p>
+                                <span>현실적으로 달성 가능</span>
+                            </div>
+                            <div class="smart-item smart-item--r">
+                                <h3>R - Relevant</h3>
+                                <p>관련성</p>
+                                <span>교육 목표와 직접 연관</span>
+                            </div>
+                            <div class="smart-item smart-item--t">
+                                <h3>T - Time-bound</h3>
+                                <p>시한성</p>
+                                <span>명확한 달성 기한</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-simulator">
+                        <h2>KPI 설정 시뮬레이터</h2>
+                        <div class="card">
+                            <div class="card__body">
+                                <div class="form-group">
+                                    <label class="form-label">교육과정 선택</label>
+                                    <select class="form-control" id="theory-course-select">
+                                        <option value="">과정을 선택하세요</option>
+                                    </select>
+                                </div>
+                                <div id="kpi-template" class="kpi-template hidden">
+                                    <h3>선택한 과정의 KPI 예시</h3>
+                                    <div id="kpi-examples"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 과정별 예시 섹션 -->
+                <div id="course-examples" class="learning-section">
+                    <div class="course-examples-container" id="course-examples-container">
+                        <!-- 과정별 예시가 동적으로 생성됩니다 -->
+                    </div>
+                </div>
+
+                <!-- ROI 계산기 섹션 -->
+                <div id="roi-calculator" class="learning-section">
+                    <div class="calculator-container">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>ROI 계산 공식</h3>
+                                <div class="roi-formula">
+                                    <p>ROI (%) = <span class="formula">(교육 효과 - 교육 비용) ÷ 교육 비용 × 100</span></p>
+                                </div>
+
+                                <div class="calculator-form">
+                                    <div class="form-group">
+                                        <label class="form-label">교육 비용 (원)</label>
+                                        <input type="number" class="form-control" id="theory-training-cost" placeholder="예: 10000000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">교육 효과 (원)</label>
+                                        <input type="number" class="form-control" id="theory-training-benefit" placeholder="예: 15000000">
+                                    </div>
+                                    <button class="btn btn--primary roi-calculate-btn" id="calculate-theory-roi">ROI 계산</button>
+                                </div>
+
+                                <div id="theory-roi-result" class="roi-result hidden">
+                                    <h4>계산 결과</h4>
+                                    <div class="result-display">
+                                        <span class="result-label">ROI:</span>
+                                        <span class="result-value" id="theory-roi-value">0%</span>
+                                    </div>
+                                    <div class="result-interpretation" id="theory-roi-interpretation"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 학습 퀴즈 섹션 -->
+                <div id="quiz" class="learning-section">
+                    <div class="quiz-container">
+                        <div class="quiz-progress">
+                            <div class="progress-text">
+                                <span id="currentQuestion">1</span> / <span id="totalQuestions">5</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-content" id="quizContent">
+                            <!-- 퀴즈 내용이 동적으로 생성됩니다 -->
+                        </div>
+                        
+                        <div class="quiz-actions" id="quizActions">
+                            <button class="btn btn--secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;">이전</button>
+                            <button class="btn btn--primary" id="nextBtn" onclick="nextQuestion()">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="practice" class="tab-content">
+                <!-- 메인 대시보드 -->
+                <section id="dashboard" class="dashboard section">
+                    <div class="container">
+                        <div class="dashboard__header">
+                            <h2>성과기여도 평가 대시보드</h2>
+                            <p class="dashboard__description">
+                                커크패트릭 4단계 모델을 기반으로 교육과정의 성과를 체계적으로 평가하고 분석하세요.
+                            </p>
+                        </div>
+
+                        <div class="dashboard__stats">
+                            <div class="stat-card">
+                                <div class="stat-card__number" id="totalCourses">8</div>
+                                <div class="stat-card__label">총 교육과정</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-card__number" id="evaluatedCourses">0</div>
+                                <div class="stat-card__label">평가 완료</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-card__number" id="inProgressCourses">0</div>
+                                <div class="stat-card__label">평가 진행중</div>
+                            </div>
+                        </div>
+
+                        <div class="courses-grid">
+                            <h3>교육과정 선택</h3>
+                            <div class="courses-container" id="coursesContainer">
+                                <!-- 동적으로 생성됨 -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 교육과정 상세 페이지 -->
+                <section id="courseDetail" class="course-detail section hidden">
+                    <div class="container">
+                        <div class="course-detail__header">
+                            <button class="btn btn--outline btn--sm back-btn" id="backToDashboard">← 대시보드로 돌아가기</button>
+                            <div class="course-detail__info">
+                                <h2 id="courseTitle"></h2>
+                                <p id="courseDescription"></p>
+                            </div>
+                        </div>
+
+                        <div class="course-detail__content">
+                            <div class="tabs">
+                                <button class="tab-btn active" data-tab="kpi">① KPI 설정</button>
+                                <button class="tab-btn" data-tab="roi">② ROI 계산</button>
+                                <button class="tab-btn" data-tab="evaluation">③ 평가 진행</button>
+                                <button class="tab-btn" data-tab="report">보고서</button>
+                            </div>
+
+                            <!-- 평가 진행 탭 -->
+                            <div id="evaluation" class="tab-content">
+                                <div class="kirkpatrick-stages">
+                                    <div class="stage-nav">
+                                        <div class="stage-step" data-stage="1">
+                                            <div class="stage-step__number">1</div>
+                                            <div class="stage-step__label">반응평가</div>
+                                        </div>
+                                        <div class="stage-step" data-stage="2">
+                                            <div class="stage-step__number">2</div>
+                                            <div class="stage-step__label">학습평가</div>
+                                        </div>
+                                        <div class="stage-step" data-stage="3">
+                                            <div class="stage-step__number">3</div>
+                                            <div class="stage-step__label">행동평가</div>
+                                        </div>
+                                        <div class="stage-step" data-stage="4">
+                                            <div class="stage-step__number">4</div>
+                                            <div class="stage-step__label">결과평가</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="stage-content" id="stageContent">
+                                        <!-- 동적으로 생성됨 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- KPI 설정 탭 -->
+                            <div id="kpi" class="tab-content">
+                                <div class="kpi-section">
+                                    <div class="smart-guide">
+                                        <h4>SMART 원칙 가이드</h4>
+                                        <div class="smart-criteria" id="smartCriteria">
+                                            <!-- 동적으로 생성됨 -->
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3>현재 설정된 KPI</h3>
+                                        <div class="kpi-list" id="kpiList">
+                                            <!-- 동적으로 생성됨 -->
+                                        </div>
+                                        <div id="kpiEditContainer">
+                                            <!-- KPI 수정 폼이 여기에 동적으로 삽입됩니다. -->
+                                        </div>
+                                    </div>
+
+                                    <div class="kpi-form-container">
+                                        <h4>새 KPI 추가</h4>
+                                        <form id="newKpiForm">
+                                            <!-- 기존 폼 -->
+                                            <div class="form-group">
+                                                <label class="form-label">평가 단계</label>
+                                                <select class="form-control" id="kpiStage" required>
+                                                    <option value="">선택하세요</option>
+                                                    <option value="1단계">1단계 - 반응평가</option>
+                                                    <option value="2단계">2단계 - 학습평가</option>
+                                                    <option value="3단계">3단계 - 행동평가</option>
+                                                    <option value="4단계">4단계 - 결과평가</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">KPI 명</label>
+                                                <input type="text" class="form-control" id="kpiName" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">목표치</label>
+                                                <input type="text" class="form-control" id="kpiTarget" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">측정 방법</label>
+                                                <input type="text" class="form-control" id="kpiMethod" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label">측정 시기</label>
+                                                <input type="text" class="form-control" id="kpiTiming" required>
+                                            </div>
+                                            <button type="submit" class="btn btn--primary">KPI 추가</button>
+                                        </form>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button class="btn btn--primary" id="completeKpiBtn">완료 및 다음 단계로</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ROI 계산 탭 -->
+                            <div id="roi" class="tab-content">
+                                <div class="roi-calculator">
+                                    <h3>ROI 계산기</h3>
+                                    <p class="roi-description">교육 투자에 대한 수익률을 계산하여 교육의 경제적 효과를 분석합니다.</p>
+                                    
+                                    <div class="roi-form">
+                                        <div class="roi-section">
+                                            <h4>📊 교육 비용 입력</h4>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label class="form-label">강사비 (원)</label>
+                                                    <input type="number" class="form-control" id="cost-instructor" placeholder="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">교육자료비 (원)</label>
+                                                    <input type="number" class="form-control" id="cost-materials" placeholder="0">
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label class="form-label">운영비 (원)</label>
+                                                    <input type="number" class="form-control" id="cost-operation" placeholder="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">참여자 시간비용 (원)</label>
+                                                    <input type="number" class="form-control" id="cost-participant" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="roi-section">
+                                            <h4>💰 교육 편익 입력</h4>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label class="form-label">생산성 향상 효과 (원/년)</label>
+                                                    <input type="number" class="form-control" id="benefit-productivity" placeholder="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">품질 향상 효과 (원/년)</label>
+                                                    <input type="number" class="form-control" id="benefit-quality" placeholder="0">
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label class="form-label">비용 절감 효과 (원/년)</label>
+                                                    <input type="number" class="form-control" id="benefit-saving" placeholder="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">기타 편익 (원/년)</label>
+                                                    <input type="number" class="form-control" id="benefit-other" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="roi-section">
+                                            <h4>📝 간단 입력 (선택사항)</h4>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label class="form-label">총 교육 비용 (원)</label>
+                                                    <input type="number" class="form-control" id="trainingCost" placeholder="0">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">교육 총 편익 (원)</label>
+                                                    <input type="number" class="form-control" id="trainingBenefit" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="btn btn--primary roi-calculate-btn" id="calculateRoi">ROI 계산</button>
+                                    </div>
+                                    
+                                    <div class="roi-result hidden" id="roiResult">
+                                        <h4>📈 계산 결과</h4>
+                                        <div class="roi-metrics">
+                                            <div class="metric">
+                                                <div class="metric__label">총 비용</div>
+                                                <div class="metric__value" id="totalCost">0원</div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric__label">총 편익</div>
+                                                <div class="metric__value" id="totalBenefit">0원</div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric__label">순 편익</div>
+                                                <div class="metric__value" id="net-benefit">0원</div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric__label">ROI</div>
+                                                <div class="metric__value" id="roi-percentage">0%</div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric__label">회수 기간</div>
+                                                <div class="metric__value" id="payback-period">0개월</div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric__label">ROI (기존)</div>
+                                                <div class="metric__value" id="roiValue">0%</div>
+                                            </div>
+                                        </div>
+                                        <div class="roi-interpretation" id="roiInterpretation">
+                                            <!-- 동적으로 생성됨 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn--primary" id="completeRoiBtn">완료 및 다음 단계로</button>
+                                </div>
+                            </div>
+
+                            <!-- 보고서 탭 -->
+                            <div id="report" class="tab-content">
+                                <div class="report-section">
+                                    <div class="report-content" id="reportContent">
+                                        <div class="report-placeholder text-center">
+                                            <h3>최종 평가 보고서</h3>
+                                            <p>모든 평가 단계를 완료하면 종합 보고서와 권고 사항을 확인할 수 있습니다.</p>
+                                            <button class="btn btn--primary" id="generateReport">보고서 생성</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 가이드 모달 -->
+                <div id="guideModal" class="modal hidden">
+                    <div class="modal__backdrop"></div>
+                    <div class="modal__content">
+                        <div class="modal__header">
+                            <h3>성과기여도 평가 가이드</h3>
+                            <button class="modal__close" id="closeGuide">×</button>
+                        </div>
+                        <div class="modal__body">
+                            <div class="guide-content">
+                                <h4>커크패트릭 4단계 평가 모델</h4>
+                                <div class="guide-stages">
+                                    <div class="guide-stage">
+                                        <h5>1단계: 반응평가 (Reaction)</h5>
+                                        <p>교육에 대한 참가자의 만족도와 반응을 측정합니다. 교육 내용, 강사, 환경에 대한 만족도를 평가합니다.</p>
+                                    </div>
+                                    <div class="guide-stage">
+                                        <h5>2단계: 학습평가 (Learning)</h5>
+                                        <p>지식, 기술, 태도의 변화 정도를 측정합니다. 교육 전후의 변화를 객관적으로 평가합니다.</p>
+                                    </div>
+                                    <div class="guide-stage">
+                                        <h5>3단계: 행동평가 (Behavior)</h5>
+                                        <p>실제 업무 현장에서의 행동 변화를 확인합니다. 학습한 내용이 실무에 적용되는지 평가합니다.</p>
+                                    </div>
+                                    <div class="guide-stage">
+                                        <h5>4단계: 결과평가 (Results)</h5>
+                                        <p>조직 성과에 미친 최종 영향을 측정합니다. ROI와 함께 교육의 실질적 효과를 분석합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="management" class="tab-content">
+                <div id="management-main-view">
+                    <div class="module-header">
+                        <h2>성과 관리 도구</h2>
+                        <p>KPI 설정, ROI 계산, 보고서 생성 등 성과 관리에 필요한 도구들을 활용하세요.</p>
+                    </div>
+    
+                    <!-- 도구 그리드 -->
+                    <div class="tools-grid">
+                        <div class="tool-card" onclick="openKpiTool()">
+                            <div class="tool-icon">📊</div>
+                            <h3>KPI 설정 도구</h3>
+                            <p>교육과정별 성과지표를 설정하고 관리합니다.</p>
+                            <button class="btn btn--primary">설정 도구 열기</button>
+                        </div>
+                        
+                        <div class="tool-card" onclick="openRoiCalculator()">
+                            <div class="tool-icon">💰</div>
+                            <h3>ROI 계산기</h3>
+                            <p>교육 투자 수익률을 계산하고 분석합니다.</p>
+                            <button class="btn btn--primary">계산기 열기</button>
+                        </div>
+                        
+                        <div class="tool-card" onclick="openPracticeModule()">
+                            <div class="tool-icon">✏️</div>
+                            <h3>실습 모듈</h3>
+                            <p>시나리오 기반 성과기여도 평가를 실습합니다.</p>
+                            <button class="btn btn--primary">실습 모듈 열기</button>
+                        </div>
+                        
+                        <div class="tool-card" onclick="openReportGenerator()">
+                            <div class="tool-icon">📄</div>
+                            <h3>성과기여도 평가<br>종합 안내자료</h3>
+                            <p>종합 안내자료를 제공합니다.</p>
+                            <button class="btn btn--primary">자료 보기</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KPI 설정 도구 섹션 (신규 추가) -->
+                <div id="kpiToolSection" class="tool-section" style="display: none;">
+                    <div class="section-header">
+                        <h3>📊 KPI 설정 도구</h3>
+                        <button class="btn btn--secondary" onclick="closeAllToolSections()">← 도구 목록으로</button>
+                    </div>
+                    <div class="kpi-tool-container">
+                        <header class="kpi-tool-header">
+                            <h2>KPI 설정 도구</h2>
+                            <p>SMART 원칙 기반으로 효과적인 성과지표를 설정하세요.</p>
+                        </header>
+
+                        <div class="kpi-nav-tabs">
+                            <button class="kpi-nav-tab active" data-tab="smart-principles">SMART 원칙</button>
+                            <button class="kpi-nav-tab" data-tab="kpi-category">KPI 카테고리</button>
+                            <button class="kpi-nav-tab" data-tab="kpi-generator">KPI 생성기</button>
+                        </div>
+
+                        <div id="smart-principles" class="kpi-tab-content active">
+                            <div class="content-header">
+                                <h3>SMART 원칙</h3>
+                            </div>
+                            <div class="smart-principles-grid">
+                                <div class="principle-card">
+                                    <h4>S - Specific (구체적)</h4>
+                                    <p>명확하고 구체적인 목표 설정</p>
+                                </div>
+                                <div class="principle-card">
+                                    <h4>M - Measurable (측정가능)</h4>
+                                    <p>정량적으로 측정 가능한 지표</p>
+                                </div>
+                                <div class="principle-card">
+                                    <h4>A - Achievable (달성가능)</h4>
+                                    <p>현실적이고 달성 가능한 목표</p>
+                                </div>
+                                <div class="principle-card">
+                                    <h4>R - Relevant (관련성)</h4>
+                                    <p>교육 목표와의 관련성</p>
+                                </div>
+                                <div class="principle-card">
+                                    <h4>T - Time-bound (시한)</h4>
+                                    <p>명확한 달성 시한 설정</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="kpi-category" class="kpi-tab-content">
+                            <div class="content-header">
+                                <h3>KPI 카테고리</h3>
+                            </div>
+                            <div class="category-grid">
+                                <div class="category-card">
+                                    <h4>참여도 지표</h4>
+                                    <ul>
+                                        <li>교육 참여율: (참여자 수 ÷ 대상자 수) × 100</li>
+                                        <li>교육 이수율: (이수자 수 ÷ 참여자 수) × 100</li>
+                                        <li>교육 만족도: 5점 척도</li>
+                                        <li>과제 참여율: 5점 척도</li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h4>학습성과 지표</h4>
+                                    <ul>
+                                        <li>지식 향상도: 사후 점수 - 사전 점수</li>
+                                        <li>스킬 습득도: 실기 평가</li>
+                                        <li>학습목표 달성도: 5점 척도</li>
+                                        <li>역량 개발 수준: 역량 평가</li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h4>행동변화 지표</h4>
+                                    <ul>
+                                        <li>현업 적용률: (적용 사례 수 ÷ 전체 사례 수) × 100</li>
+                                        <li>행동 변화 정도: 360도 피드백</li>
+                                        <li>업무 개선 사례: 사례 수집</li>
+                                        <li>지식 공유 활동: 활동 횟수</li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h4>조직성과 지표</h4>
+                                    <ul>
+                                        <li>업무 효율성: 업무 처리 시간 단축률</li>
+                                        <li>고객 만족도: 고객 설문</li>
+                                        <li>품질 개선도: 품질 지표</li>
+                                        <li>팀워크 향상도: 팀워크 평가</li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h4>재무성과 지표</h4>
+                                    <ul>
+                                        <li>비용 절감 효과: 절감 비용</li>
+                                        <li>수익 증대 효과: 증대 수익</li>
+                                        <li>교육 ROI: (순이익 ÷ 교육비용) × 100</li>
+                                        <li>생산성 향상도: 생산성 증가율</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="kpi-generator" class="kpi-tab-content">
+                             <div class="content-header">
+                                <h3>KPI 생성기</h3>
+                            </div>
+                            <form class="kpi-generator-form">
+                                <div class="form-group">
+                                    <label for="kpiName">KPI 명칭</label>
+                                    <input type="text" id="kpiName" placeholder="예: 교육 참여율">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kpiCategorySelect">카테고리</label>
+                                    <select id="kpiCategorySelect">
+                                        <option value="">카테고리 선택</option>
+                                        <option value="participation">참여도 지표</option>
+                                        <option value="learning">학습성과 지표</option>
+                                        <option value="behavior">행동변화 지표</option>
+                                        <option value="organizational">조직성과 지표</option>
+                                        <option value="financial">재무성과 지표</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="kpiMeasureMethod">측정 방법</label>
+                                    <textarea id="kpiMeasureMethod" rows="3" placeholder="측정 방법을 상세히 기술하세요."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="kpiTargetValue">목표값</label>
+                                    <input type="text" id="kpiTargetValue" placeholder="목표값 입력">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kpiMeasureCycle">측정 주기</label>
+                                    <select id="kpiMeasureCycle">
+                                        <option value="">측정 주기 선택</option>
+                                        <option value="quarterly">분기별</option>
+                                        <option value="half-yearly">반기별</option>
+                                        <option value="yearly">연간</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn--primary">KPI 생성</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROI 계산기 섹션 -->
+                <div id="roiCalculatorSection" class="tool-section" style="display: none;">
+                    <div class="section-header">
+                        <h3>💰 ROI 계산기</h3>
+                        <button class="btn btn--secondary" onclick="closeAllToolSections()">← 도구 목록으로</button>
+                    </div>
+                    <div class="roi-calculator-container">
+                        <div class="calculator-header">
+                            <h2>ROI 계산기</h2>
+                            <p>교육 투자 수익률을 계산하고 분석해보세요.</p>
+                        </div>
+                        <div class="calculator-body">
+                            <!-- Column 1: 교육 비용 입력 -->
+                            <div class="calculator-section">
+                                <h4>교육 비용 입력</h4>
+                                <div class="form-group">
+                                    <label for="tool-cost-instructor">강사비 (만원)</label>
+                                    <input type="number" id="tool-cost-instructor" class="form-control" value="500">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tool-cost-materials">교육자료비 (만원)</label>
+                                    <input type="number" id="tool-cost-materials" class="form-control" value="100">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tool-cost-operation">운영비 (만원)</label>
+                                    <input type="number" id="tool-cost-operation" class="form-control" value="200">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tool-cost-participant">참여자 시간비용 (만원)</label>
+                                    <input type="number" id="tool-cost-participant" class="form-control" value="300">
+                                </div>
+                                <div class="total-summary">
+                                    <strong>총 교육비용: <span id="tool-total-cost">0</span>만원</strong>
+                                </div>
+                            </div>
+                    
+                            <!-- Column 2: 예상 편익 입력 -->
+                            <div class="calculator-section">
+                                <h4>예상 편익 입력</h4>
+                                <div class="form-group">
+                                    <label for="tool-benefit-productivity">생산성 향상 효과 (만원/년)</label>
+                                    <input type="number" id="tool-benefit-productivity" class="form-control" value="1000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tool-benefit-quality">품질 향상 효과 (만원/년)</label>
+                                    <input type="number" id="tool-benefit-quality" class="form-control" value="800">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tool-benefit-saving">비용 절감 효과 (만원/년)</label>
+                                    <input type="number" id="tool-benefit-saving" class="form-control" value="600">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tool-benefit-other">기타 편익 (만원/년)</label>
+                                    <input type="number" id="tool-benefit-other" class="form-control" value="200">
+                                </div>
+                                <div class="total-summary">
+                                    <strong>총 연간편익: <span id="tool-total-benefit">0</span>만원</strong>
+                                </div>
+                            </div>
+                    
+                            <!-- Column 3: ROI 분석 결과 -->
+                            <div class="calculator-section result-section">
+                                <h4>ROI 분석 결과</h4>
+                                <div class="result-box">
+                                    <label>순편익 (연간편익 - 교육비용)</label>
+                                    <p class="result-value"><span id="tool-net-benefit">0</span>만원</p>
+                                </div>
+                                <div class="result-box">
+                                    <label>ROI (%)</label>
+                                    <p class="result-value"><span id="tool-roi-percentage">0</span>%</p>
+                                </div>
+                                <div class="result-box">
+                                    <label>투자회수기간</label>
+                                    <p class="result-value"><span id="tool-payback-period">0</span>개월</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator-footer">
+                            <button class="btn btn--primary" id="tool-calculate-roi-btn">ROI 계산</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 실습 모듈 섹션 -->
+                <div id="practiceModuleSection" class="tool-section" style="display: none;">
+                    <div class="section-header">
+                        <h3>🎯 성과기여도 평가 시나리오 실습</h3>
+                        <button class="btn btn--secondary" onclick="closeAllToolSections()">← 도구 목록으로</button>
+                    </div>
+                    
+                    <div class="practice-scenarios">
+                        <div class="scenario-card" data-scenario="1">
+                            <h3>시나리오 1: 신규 직원 온보딩 교육</h3>
+                            <p>보건복지인재개발원에 신입 직원 50명을 대상으로 한 온보딩 교육과정의 성과기여도를 평가하는 시나리오</p>
+                            <div class="scenario-tasks">
+                                <h4>실습 과제:</h4>
+                                <ul>
+                                    <li>교육목표 설정하기</li>
+                                    <li>적절한 KPI 선정하기</li>
+                                    <li>측정 계획 수립하기</li>
+                                    <li>결과 분석 및 개선방안 도출하기</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn--primary" onclick="startScenario(1)">시나리오 시작</button>
+                        </div>
+
+                        <div class="scenario-card" data-scenario="2">
+                            <h3>시나리오 2: 리더십 역량 강화 교육</h3>
+                            <p>중간관리자 30명을 대상으로 한 리더십 교육과정의 ROI를 계산하는 시나리오</p>
+                            <div class="scenario-tasks">
+                                <h4>실습 과제:</h4>
+                                <ul>
+                                    <li>ROI 계산을 위한 데이터 수집 계획</li>
+                                    <li>비용 산정 및 효과 측정</li>
+                                    <li>ROI 계산 및 해석</li>
+                                    <li>경영진 보고서 작성</li>
+                                </ul>
+                            </div>
+                            <button class="btn btn--primary" onclick="startScenario(2)">시나리오 시작</button>
+                        </div>
+                    </div>
+
+                    <div id="scenarioInterface" class="scenario-interface" style="display: none;">
+                        <h3 id="scenarioTitle"></h3>
+                        <div class="scenario-progress">
+                            <div class="progress-steps">
+                                <div class="step active" data-step="1">1단계</div>
+                                <div class="step" data-step="2">2단계</div>
+                                <div class="step" data-step="3">3단계</div>
+                                <div class="step" data-step="4">4단계</div>
+                            </div>
+                        </div>
+                        <div id="scenarioContent" class="scenario-content">
+                        </div>
+                        <div class="scenario-actions">
+                            <button class="btn btn--secondary" onclick="previousStep()">이전</button>
+                            <button class="btn btn--primary" onclick="nextStep()">다음</button>
+                            <button class="btn btn--outline" onclick="exitScenario()">종료</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 보고서 생성 섹션 -->
+                <div id="reportGeneratorSection" class="tool-section" style="display: none;">
+                    <div class="section-header">
+                        <h3>📄 성과기여도 평가<br>종합 안내자료</h3>
+                        <button class="btn btn--secondary" onclick="closeAllToolSections()">← 도구 목록으로</button>
+                    </div>
+                    <div class="report-generator-content">
+                        <div class="pdf-viewer-container">
+                            <div class="pdf-controls">
+                                <span id="pageInfo">페이지 1 / 20</span>
+                                <button class="btn btn--primary" onclick="downloadPDF()">다운로드</button>
+                            </div>
+                            <div class="pdf-viewer">
+                                <iframe 
+                                    id="pdfViewer" 
+                                    src="https://drive.google.com/file/d/1PH-spz8-94_k2N14yIhZnfk201sVo-1M/preview" 
+                                    width="100%" 
+                                    height="600px"
+                                    frameborder="0">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 한국보건복지인재원(KOHI). 성과기여도 평가 시스템</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="kpi-tool.js"></script>
+    <script src="mobile-optimization.js"></script>
+</body>
+</html> 

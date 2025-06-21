@@ -1,0 +1,202 @@
+/* 화면 크기 축소를 위한 스타일 */
+:root {
+    /* 폰트 크기 축소 */
+    --font-size-base: 0.9rem;
+    --font-size-sm: 0.8rem;
+    --font-size-xs: 0.7rem;
+    --font-size-md: 0.9rem;
+    --font-size-lg: 1rem;
+    --font-size-xl: 1.1rem;
+    --font-size-2xl: 1.3rem;
+    --font-size-3xl: 1.6rem;
+    --font-size-4xl: 1.9rem;
+    
+    /* 간격 축소 */
+    --spacing-xs: 0.2rem;
+    --spacing-sm: 0.4rem;
+    --spacing-md: 0.8rem;
+    --spacing-lg: 1.2rem;
+    --spacing-xl: 1.6rem;
+    --spacing-xxl: 2.4rem;
+}
+
+/* 컨테이너 최대 너비 축소 */
+.container {
+    max-width: 1000px !important;
+}
+
+/* 헤더 크기 축소 */
+.header {
+    padding: var(--spacing-lg) 0 !important;
+}
+
+.header-title {
+    font-size: 1.8rem !important;
+}
+
+.header-subtitle {
+    font-size: 1rem !important;
+}
+
+/* 네비게이션 탭 크기 축소 */
+.nav-tab {
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    font-size: 1rem !important;
+}
+
+/* 메인 콘텐츠 패딩 축소 */
+.main-content {
+    padding: var(--spacing-lg) 0 !important;
+}
+
+/* 페이지 헤더 크기 축소 */
+.page-header h1 {
+    font-size: 1.8rem !important;
+}
+
+.page-header p {
+    font-size: 1rem !important;
+}
+
+/* 대시보드 헤더 크기 축소 */
+.dashboard__header h2 {
+    font-size: 1.8rem !important;
+}
+
+.dashboard__description {
+    font-size: 1rem !important;
+}
+
+/* 통계 카드 크기 축소 */
+.stat-card {
+    padding: var(--spacing-md) var(--spacing-sm) !important;
+}
+
+.stat-card__number {
+    font-size: 2rem !important;
+}
+
+/* 카드 제목 크기 축소 */
+.card__title {
+    font-size: 1.2rem !important;
+}
+
+/* 코스 카드 크기 축소 */
+.course-card {
+    padding: var(--spacing-md) !important;
+}
+
+.course-card__title {
+    font-size: 1.1rem !important;
+}
+
+.course-card__description {
+    font-size: 0.9rem !important;
+}
+
+/* 버튼 크기 축소 */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    font-size: 0.9rem !important;
+}
+
+/* 폼 요소 크기 축소 */
+.form-control {
+    padding: var(--spacing-sm) !important;
+    font-size: 0.9rem !important;
+}
+
+.form-label {
+    font-size: 0.9rem !important;
+}
+
+/* 그리드 간격 축소 */
+.grid--2,
+.grid--3,
+.grid--4,
+.grid--5 {
+    gap: var(--spacing-md) !important;
+}
+
+/* 스마트 아이템 크기 축소 */
+.smart-item {
+    padding: var(--spacing-md) !important;
+}
+
+.smart-item h3 {
+    font-size: 1.1rem !important;
+}
+
+.smart-item p {
+    font-size: 0.9rem !important;
+}
+
+/* KPI 카드 크기 축소 */
+.kpi-card {
+    padding: var(--spacing-md) !important;
+}
+
+.kpi-card__name {
+    font-size: 1.1rem !important;
+}
+
+/* ROI 컨테이너 크기 축소 */
+.roi-container {
+    padding: var(--spacing-md) !important;
+}
+
+/* 도구 카드 크기 축소 */
+.tool-card {
+    padding: var(--spacing-md) !important;
+}
+
+.tool-card h3 {
+    font-size: 1.1rem !important;
+}
+
+.tool-card p {
+    font-size: 0.9rem !important;
+}
+
+/* 시나리오 카드 크기 축소 */
+.scenario-card {
+    padding: var(--spacing-md) !important;
+}
+
+.scenario-card h3 {
+    font-size: 1.1rem !important;
+}
+
+.scenario-card p {
+    font-size: 0.9rem !important;
+}
+
+/* 퀴즈 컨테이너 크기 축소 */
+.quiz-container {
+    padding: var(--spacing-md) !important;
+}
+
+.quiz-question h3 {
+    font-size: 1.2rem !important;
+}
+
+/* 모바일 반응형 조정 */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95% !important;
+        padding: 0 var(--spacing-sm) !important;
+    }
+    
+    .header-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .header-subtitle {
+        font-size: 0.9rem !important;
+    }
+    
+    .nav-tab {
+        padding: var(--spacing-xs) var(--spacing-sm) !important;
+        font-size: 0.9rem !important;
+    }
+} 
