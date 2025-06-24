@@ -13954,6 +13954,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .report-actions {
   display: flex;
+  flex-direction: column;      /* 버튼 세로 정렬 */
   gap: 8px;
   flex-shrink: 0;
 }
@@ -14340,17 +14341,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .report-final-header {
+  background: #393e42;         /* 진한 회색/검정 배경 */
+  border-radius: 16px;         /* 둥근 모서리 */
+  padding: 32px 24px;          /* 내부 여백 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* 필요시 */
-  gap: 16px; /* 버튼과 제목 사이 간격 */
+  margin-bottom: 24px;
 }
+
 .report-final-header h3 {
+  color: #fff;                 /* 흰색 글씨 */
+  font-size: 2rem;             /* 글씨 크게 */
+  font-weight: bold;
   margin: 0;
-  font-size: 1.2em;
-  flex: 1 1 auto; /* 제목이 남은 공간 차지 */
-  min-width: 200px; /* 너무 작아지지 않게 */
+  flex: 1 1 auto;
+  min-width: 200px;
+  word-break: keep-all;        /* 단어 단위 줄바꿈 */
 }
 
 .report-stage-card {
