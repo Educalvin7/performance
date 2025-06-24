@@ -1,0 +1,72 @@
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* 박스 및 컨테이너 공통 처리 */
+  .box,
+  .card,
+  .container,
+  [class*="box"],
+  [class*="card"],
+  div[style*="width"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow-x: auto;
+  }
+
+  /* flexbox 레이아웃 column 전환 */
+  .container,
+  .flex,
+  [class*="flex"],
+  [class*="row"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px;
+  }
+
+  /* 이미지 및 미디어 반응형 */
+  img,
+  video,
+  iframe {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  /* 버튼 터치 친화적 크기 */
+  button,
+  input[type="button"],
+  input[type="submit"],
+  .btn,
+  [class*="btn"] {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.1em;
+    padding: 12px 18px;
+    box-sizing: border-box;
+  }
+
+  /* 테이블 반응형 */
+  table {
+    width: 100% !important;
+    display: block;
+    overflow-x: auto;
+  }
+  th, td {
+    box-sizing: border-box;
+    word-break: break-all;
+  }
+
+  /* 기타: form, input 등 */
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+} 
