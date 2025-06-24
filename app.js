@@ -1939,3 +1939,46 @@ window.exitScenario = exitScenario;
 window.previousPage = previousPage;
 window.nextPage = nextPage;
 window.downloadPDF = downloadPDF;
+function optimizeMobilePdfViewer() {
+  // 모바일 환경에서만 동작
+  if (window.innerWidth <= 768) {
+    // PDF 컨테이너 스타일 강제 적용
+    var pdfContainer = document.querySelector('.pdf-viewer-container');
+    var pdfViewer = document.querySelector('.pdf-viewer');
+    var iframe = document.getElementById('pdfViewer');
+    if (pdfContainer) {
+      pdfContainer.style.width = '100vw';
+      pdfContainer.style.maxWidth = '100vw';
+      pdfContainer.style.height = '100vh';
+      pdfContainer.style.maxHeight = '100vh';
+      pdfContainer.style.margin = '0';
+      pdfContainer.style.padding = '0';
+      pdfContainer.style.boxShadow = 'none';
+      pdfContainer.style.borderRadius = '0';
+    }
+    if (pdfViewer) {
+      pdfViewer.style.width = '100vw';
+      pdfViewer.style.maxWidth = '100vw';
+      pdfViewer.style.height = 'calc(100vh - 40px)';
+      pdfViewer.style.maxHeight = 'calc(100vh - 40px)';
+      pdfViewer.style.margin = '0';
+      pdfViewer.style.boxShadow = 'none';
+      pdfViewer.style.borderRadius = '0';
+    }
+    if (iframe) {
+      iframe.style.width = '100vw';
+      iframe.style.height = '100%';
+      iframe.style.minHeight = 'calc(100vh - 40px)';
+      iframe.style.borderRadius = '0';
+      iframe.style.display = 'block';
+      iframe.style.overflow = 'hidden';
+    }
+    // body 가로 스크롤 제거
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+  }
+}
+
+// 최초 로드 및 리사이즈 시 적용
+window.addEventListener('DOMContentLoaded', optimizeMobilePdfViewer);
+window.addEventListener('resize', optimizeMobilePdfViewer);
