@@ -6418,14 +6418,3 @@ dialog :link{
     display:none;
   }
 }
-
-@media (max-width: 600px) {
-  #viewerContainer,
-  #viewer,
-  .pdfViewer {
-    max-width: 100vw;
-    width: 100%;
-    overflow-x: auto;
-    box-sizing: border-box;
-  }
-}
