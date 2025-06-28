@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout performance branch
+      - name: Checkout performance branch
         uses: actions/checkout@v4
         with:
           ref: performance
 
-      - name: deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+          publish_branch: gh-pages  # ✅ 이 줄 추가!
